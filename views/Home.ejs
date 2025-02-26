@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <!-- Main-css -->
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <!-- Icon -->
+    <link rel="stylesheet" href="/remix/remixicon.css" type="text/css">
+    <!-- Fonts -->
+    <link rel="stylesheet" href="/fonts/stylesheet.css" type="text/css">
+</head>
+<body>
+    <%- include('Header') %>
+
+    <div class="container movies">
+        <h2>Recommended Movies</h2>
+
+        <div class="d-flex">
+            <% MovieData.map((v, i) => { %>
+                <a href="/viewData?id=<%= v.id %>" class="card">
+                    <div class="cardImg">
+                        <img src="<%= v.coverImage %>" alt="" width="200px">
+                    </div>
+
+                    <h4><%= v.title %></h4>
+                    <p><%= v.genres %></p>
+                </a>
+            <% }) %>
+        </div>
+
+        <!-- Pagination -->
+        <div class="main-pagination">
+            <div class="pagination">
+                <% for(var i = 0; i < TotalCounts;  i++) { %>
+                    <a href="?page=<%= i %>"><%= i+1 %></a>
+                <% } %>
+            </div>
+    
+    
+            <div class="pagination">
+                <a href="?page=<%= parseInt(Page) - 1 %>&searchBlog=<%= Search %>" class="<%= parseInt(Page) <= 0 ? 'disabled':'' %>">Previous</a>
+                <a href="?page=<%= Page %>&searchMovie=<%= Search %>"><%= parseInt(Page) + 1 %></a>
+                <a href="?page=<%= parseInt(Page) + 1 %>&searchMovie=<%= Search %>" class="<%= parseInt(Page) == TotalCounts-1 ? 'disabled':'' %>">Next</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

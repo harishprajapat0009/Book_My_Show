@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Movie</title>
+    <!-- Main-css -->
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <!-- Icon -->
+    <link rel="stylesheet" href="/remix/remixicon.css" type="text/css">
+    <!-- Fonts -->
+    <link rel="stylesheet" href="/fonts/stylesheet.css" type="text/css">
+</head>
+
+<body>
+
+    <%- include('Header')%>
+
+    <center>
+        <h1 class="container">Add Movie Data</h1>
+
+        <form action="/insertData" method="post" enctype="multipart/form-data">
+            <table border="1" align="center">
+                <tr>
+                    <td>Enter Title: </td>
+                    <td><input type="text" name="title"></td>
+                </tr>
+                <tr>
+                    <td>Select Languages: </td>
+                    <td>
+                        <input type="checkbox" name="language" value="Hindi"> Hindi
+                        <input type="checkbox" name="language" value="Telugu"> Telugu
+                        <input type="checkbox" name="language" value="Bengali"> Bengali
+                        <input type="checkbox" name="language" value="Tamil"> Tamil
+                        <input type="checkbox" name="language" value="English"> English
+                    </td>
+                </tr>
+                <tr>
+                    <td>Select Genres: </td>
+                    <td>
+                        <input type="checkbox" name="genres" value="Thriller"> Thriller
+                        <input type="checkbox" name="genres" value="Action"> Action
+                        <input type="checkbox" name="genres" value="Drama"> Drama
+                        <input type="checkbox" name="genres" value="Comedy"> Comedy
+                        <input type="checkbox" name="genres" value="Adventure"> Adventure
+                    </td>
+                </tr>
+                <tr>
+                    <td>Select Format: </td>
+                    <td>
+                        <input type="checkbox" name="format" value="2D"> 2D
+                        <input type="checkbox" name="format" value="3D"> 3D
+                        <input type="checkbox" name="format" value="IMAX 2D"> IMAX 2D
+                        <input type="checkbox" name="format" value="IMAX 3D"> IMAX 3D
+                    </td>
+                </tr>
+                <tr>
+                    <td>Date: </td>
+                    <td><input type="date" name="date"></td>
+                </tr>
+                <tr>
+                    <td>Duration: </td>
+                    <td><input type="text" name="duration"></td>
+                </tr>
+                <tr>
+                    <td>Add Cover Image: </td>
+                    <td><input type="file" name="coverImage"></td>
+                </tr>
+                <tr>
+                    <td>Add Background Image: </td>
+                    <td><input type="file" name="bgImage"></td>
+                </tr>
+                <tr>
+                    <td>Description: </td>
+                    <td><textarea name="description"></textarea></td>
+                </tr>
+            </table>
+            
+            <input type="submit" name="submit" value="Add Movie" style="margin: 10px 0;">
+    
+        </form>
+    </center>
+</body>
+</html>
