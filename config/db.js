@@ -1,6 +1,8 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://127.0.0.1:27017/Movie_Modal');
+// Online
+mongoose.connect('mongodb+srv://harish_0009:Pass4mongodb@cluster0.xhvdh.mongodb.net/Movie_Modal');
+
 
 const db = mongoose.connection;
 
